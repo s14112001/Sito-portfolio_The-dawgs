@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blinking Dog</title>
+    <style>
+        /* Definiamo le animazioni per gli occhi */
+        @keyframes blink {
+            0%, 100% {
+                transform: scaleY(1);
+            }
+            50% {
+                transform: scaleY(0.1);
+            }
+        }
+
+        .eye {
+            animation: blink 2s infinite; /* Durata di 2 secondi e ripetizione infinita */
+            transform-origin: center; /* Origin della trasformazione al centro dell'occhio */
+        }
+    </style>
+</head>
+<body>
+    <!-- Disegno del cane con corpo, testa, occhi, orecchie, naso e bocca -->
+    <svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+        <!-- Corpo del cane (ovale) -->
+        <ellipse cx="150" cy="270" rx="120" ry="180" fill="#e6ac00" />
+        <!-- Testa del cane (cerchio) -->
+        <circle cx="150" cy="150" r="100" fill="#e6ac00" />
+        <!-- Naso del cane (triangolo) -->
+        <polygon points="150,160 140,180 160,180" fill="#000" />
+        <!-- Occhi del cane (due cerchi) con pupille bianche -->
+        <circle class="eye" cx="110" cy="120" r="10" fill="#fff">
+            <circle cx="110" cy="120" r="4" fill="#fff" />
+        </circle>
+        <circle class="eye" cx="190" cy="120" r="10" fill="#fff">
+            <circle cx="190" cy="120" r="4" fill="#fff" />
+        </circle>
+        <!-- Orecchie del cane (due ovali) -->
+        <ellipse cx="90" cy="80" rx="30" ry="40" fill="#e6ac00" />
+        <ellipse cx="210" cy="80" rx="30" ry="40" fill="#e6ac00" />
+        <!-- Bocca del cane (parentesi rovesciata con riga orizzontale in grassetto) -->
+        <text x="128" y="200" font-family="Arial" font-size="24" fill="#000" font-weight="bold">___</text>
+        <!-- Gambe del cane (due cerchi) -->
+        <circle cx="90" cy="320" r="20" fill="#ffe07" />
+        <circle cx="210" cy="320" r="20" fill="#000" />
+    </svg>
+</body>
+</html>
